@@ -1,7 +1,7 @@
 import Head from "next/head";
-import { Heading } from "@chakra-ui/react";
 import Layout from "../components/Layout";
 import Hero from "../components/Hero";
+import About from "../components/About";
 
 export default function Home() {
   return (
@@ -10,6 +10,7 @@ export default function Home() {
         <title>Benjamin Ogunbola</title>
       </Head>
       <Hero />
+      <About />
     </Layout>
   );
 }

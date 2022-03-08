@@ -24,13 +24,13 @@ const Header = () => {
 
   return (
     <Box
-      h={{ base: isOpen ? "100vh" : "auto", md: "auto" }}
+      h={{ base: isOpen ? "100vh" : "auto", sm: "auto" }}
       maxH="100vh"
       w="100%"
       top={0}
       left={0}
       py={4}
-      position={{ base: isOpen ? "fixed" : "sticky", md: "sticky" }}
+      position={{ base: isOpen ? "fixed" : "sticky", sm: "sticky" }}
       bg={useColorModeValue("white", "gray.800")}
       borderBottom={isOpen ? 0 : "1px"}
       borderColor={useColorModeValue("gray.800", "white")}
@@ -38,13 +38,13 @@ const Header = () => {
     >
       <Container h="100%">
         <Flex
-          flexDir={{ base: "column", md: "row" }}
+          flexDir={{ base: "column", sm: "row" }}
           align="center"
           justify="space-between"
           h="100%"
         >
           <Flex
-            w={{ base: "full", md: "auto" }}
+            w={{ base: "full", sm: "auto" }}
             align="center"
             justify="space-between"
           >
@@ -55,20 +55,20 @@ const Header = () => {
               </Heading>
             </Flex>
             <IconButton
-              d={{ base: "block", md: "none" }}
+              d={{ base: "block", sm: "none" }}
               variant="outline"
               icon={isOpen ? <CloseIcon /> : <HamburgerIcon boxSize={5} />}
               onClick={onToggle}
             />
           </Flex>
           <Flex
-            d={{ base: isOpen ? "flex" : "none", md: "flex" }}
-            h={{ base: "calc(100vh - 40px - 16px)", md: "auto" }}
+            d={{ base: isOpen ? "flex" : "none", sm: "flex" }}
+            h={{ base: "calc(100vh - 40px - 16px)", sm: "auto" }}
             align="center"
             justify="center"
           >
             <Flex
-              flexDir={{ base: "column", md: "row" }}
+              flexDir={{ base: "column", sm: "row" }}
               align="center"
               gap={6}
             >
@@ -78,7 +78,7 @@ const Header = () => {
             </Flex>
           </Flex>
           <IconButton
-            d={{ base: isOpen ? "flex" : "none", md: "flex" }}
+            d={{ base: isOpen ? "flex" : "none", sm: "flex" }}
             variant="solid"
             icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
             onClick={toggleColorMode}

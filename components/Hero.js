@@ -4,7 +4,7 @@ import BgAnimation from "./BgAnimation";
 
 const Hero = () => {
   return (
-    <Container py={10}>
+    <Container mb={20} py={10}>
       <Box position="relative" mb={6}>
         <Box maxW="2xl">
           <Heading mb={4} size="3xl">

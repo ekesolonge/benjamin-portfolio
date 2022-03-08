@@ -4,7 +4,7 @@ import { theme } from "../theme";
 
 export default function Document() {
   return (
-    <Html>
+    <Html style={{ scrollBehavior: "smooth" }}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,7 +18,7 @@ export default function Document() {
           rel="stylesheet"
         />
       </Head>
-      <body style={{ scrollBehavior: "smooth" }}>
+      <body>
         <ColorModeScript initialColorMode={theme.config.initialColorMode} />
         <Main />
         <NextScript />
