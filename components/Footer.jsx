@@ -2,7 +2,6 @@ import {
   Box,
   Flex,
   Heading,
-  IconButton,
   Link,
   Text,
   useColorModeValue,
@@ -36,7 +35,7 @@ const Footer = () => {
     },
   ];
   return (
-    <Container>
+    <Container py={4}>
       <Flex
         wrap="wrap"
         align="center"

@@ -4,8 +4,8 @@ import BgAnimation from "./BgAnimation";
 
 const Hero = () => {
   return (
-    <Container mb={20} py={10}>
-      <Box position="relative" mb={6}>
+    <Container py={{ base: 30, md: "8rem" }}>
+      <Box position="relative" mb={8}>
         <Box maxW="2xl">
           <Heading mb={4} size="3xl">
             Ogunbola Benjamin
@@ -30,13 +30,25 @@ const Hero = () => {
           left={{ base: 0, md: "unset" }}
         />
       </Box>
-      <Link
-        href="#about"
-        textDecoration="none"
-        _hover={{ textDecoration: "none" }}
-      >
-        <Button size="lg">Learn More</Button>
-      </Link>
+      <Flex gap={8}>
+        <Link
+          href="#about"
+          textDecoration="none"
+          _hover={{ textDecoration: "none" }}
+        >
+          <Button size="lg">Learn More</Button>
+        </Link>
+        <Link
+          href="/docs/resume.txt"
+          download
+          textDecoration="none"
+          _hover={{ textDecoration: "none" }}
+        >
+          <Button size="lg" variant="outline">
+            Resume
+          </Button>
+        </Link>
+      </Flex>
     </Container>
   );
 };
