@@ -22,17 +22,24 @@ const ContactForm = () => {
       name: "",
       message: "",
     },
-    onSubmit: (values, { setSubmitting }) => {
-      setTimeout(() => {
-        console.log(values);
-        setSubmitting(false);
-        setAlert("success");
-        setMessage(
-          "Thank you for contacting me, I will reply you as soon as possible."
-        );
-        // setAlert("error");
-        // setMessage("There was an error submitting form please try again!");
-      }, 1000);
+    onSubmit: (values, { setSubmitting, resetForm }) => {
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "contact-form", ...values }),
+      })
+        .then(() => {
+          setAlert("success");
+          setMessage(
+            "Thank you for contacting me, I will reply you as soon as possible."
+          );
+          resetForm();
+        })
+        .catch(() => {
+          setAlert("error");
+          setMessage("There was an error submitting form please try again!");
+        })
+        .finally(() => setSubmitting(false));
     },
     validationSchema: yup.object({
       name: yup.string().trim().required("Name is required"),
@@ -44,8 +51,18 @@ const ContactForm = () => {
     }),
   });
 
+  const encode = data => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+  };
+
   return (
-    <form onSubmit={formik.handleSubmit}>
+    <form
+      name="contact-form"
+      data-netlify={true}
+      onSubmit={formik.handleSubmit}
+    >
       {alert && (
         <Alert status={alert}>
           <AlertIcon />
