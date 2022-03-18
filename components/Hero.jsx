@@ -2,9 +2,9 @@ import { Box, Button, Flex, Heading, Link, Text } from "@chakra-ui/react";
 import Container from "./Container";
 import BgAnimation from "./BgAnimation";
 
-const Hero = () => {
+const Hero = ({ ...props }) => {
   return (
-    <Container py={{ base: 30, md: "8rem" }}>
+    <Container py={{ base: 30, md: "8rem" }} {...props}>
       <Box position="relative" mb={8}>
         <Box maxW="2xl">
           <Heading mb={4} size="3xl">

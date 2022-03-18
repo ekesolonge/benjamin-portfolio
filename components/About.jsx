@@ -5,9 +5,9 @@ import Heading from "./Heading";
 import Skills from "./Skills";
 import AppImage from "./AppImage";
 
-const About = () => {
+const About = ({ ...props }) => {
   return (
-    <Box py={20} id="about">
+    <Box py={20} id="about" {...props}>
       <Container>
         <Box mb={8}>
           <Heading mb={10} size="2xl">
